@@ -1,118 +1,205 @@
-# File Conversion Service
+# Converty
 
-**Project ID:** P68  
-**Course:** UE23CS341A  
-**Academic Year:** 2025  
-**Semester:** 5th Sem  
-**Campus:** RR  
-**Branch:** CSE  
-**Section:** B  
-**Team:** Converty
+## Secure File Conversion REST API
 
-## 📋 Project Description
-
-An API that converts files from one format to another (e.g., Markdown to PDF, CSV to JSON).
-
-This repository contains the source code and documentation for the File Conversion Service project, developed as part of the UE23CS341A course at PES University.
-
-## 🧑‍💻 Development Team (Converty)
-
-- [@AyushGowdaK9910](https://github.com/AyushGowdaK9910) - Scrum Master
-- [@Ananya11488](https://github.com/Ananya11488) - Developer Team
-- [@anivartha](https://github.com/anivartha) - Developer Team
-
-## 👨‍🏫 Teaching Assistant
-
-- [@BlackADer-0069](https://github.com/BlackADer-0069)
-- [@Abhigna-D](https://github.com/Abhigna-D)
-- [@MDAzeemDhalayat](https://github.com/MDAzeemDhalayat)
-
-## 👨‍⚖️ Faculty Supervisor
-
-- *No valid faculty GitHub username found*
-
-
-## 🚀 Getting Started
-
-### Prerequisites
-- [List your prerequisites here]
-
-### Installation
-1. Clone the repository
-   ```bash
-   git clone https://github.com/pestechnology/PESU_RR_CSE_B_P68_File_Conversion_Service_Converty.git
-   cd PESU_RR_CSE_B_P68_File_Conversion_Service_Converty
-   ```
-
-2. Install dependencies
-   ```bash
-   # Add your installation commands here
-   ```
-
-3. Run the application
-   ```bash
-   # Add your run commands here
-   ```
-
-## 📁 Project Structure
-
-```
-PESU_RR_CSE_B_P68_File_Conversion_Service_Converty/
-├── src/                 # Source code
-├── docs/               # Documentation
-├── tests/              # Test files
-├── .github/            # GitHub workflows and templates
-├── README.md          # This file
-└── ...
-```
-
-## 🛠️ Development Guidelines
-
-### Branching Strategy
-- `main`: Production-ready code
-- `develop`: Development branch
-- `feature/*`: Feature branches
-- `bugfix/*`: Bug fix branches
-
-### Commit Messages
-Follow conventional commit format:
-- `feat:` New features
-- `fix:` Bug fixes
-- `docs:` Documentation changes
-- `style:` Code style changes
-- `refactor:` Code refactoring
-- `test:` Test-related changes
-
-### Code Review Process
-1. Create feature branch from `develop`
-2. Make changes and commit
-3. Create Pull Request to `develop`
-4. Request review from team members
-5. Merge after approval
-
-## 📚 Documentation
-
-- [API Documentation](docs/api.md)
-- [User Guide](docs/user-guide.md)
-- [Developer Guide](docs/developer-guide.md)
-
-## 🧪 Testing
-
-```bash
-# Run tests
-npm test
-
-# Run tests with coverage
-npm run test:coverage
-```
-
-## 📄 License
-
-This project is developed for educational purposes as part of the PES University UE23CS341A curriculum.
+Converty is a backend file conversion service built using **TypeScript**, **Express.js**, and **Python** that enables secure file upload, conversion, and download through REST APIs. The application follows a modular architecture with API documentation, security middleware, logging, and CI/CD integration.
 
 ---
 
-**Course:** UE23CS341A  
-**Institution:** PES University  
-**Academic Year:** 2025  
-**Semester:** 5th Sem
+## Features
+
+- Secure file upload and validation
+- File format conversion APIs
+- Download converted files
+- Interactive Swagger API documentation
+- HTTPS support with SSL certificates
+- Security middleware using Helmet
+- Centralized error handling
+- Request logging
+- CI/CD workflow using GitHub Actions
+- Example API clients for integration
+
+---
+
+## Supported Conversions
+
+- CSV → JSON
+- Markdown → PDF
+
+The modular architecture makes it easy to extend the system with additional file converters.
+
+---
+
+## Tech Stack
+
+### Backend
+
+- TypeScript
+- Node.js
+- Express.js
+
+### Python Services
+
+- FastAPI
+- Pydantic
+- Uvicorn
+
+### API & Security
+
+- REST APIs
+- Swagger / OpenAPI
+- Helmet
+- Multer
+
+### DevOps
+
+- GitHub Actions
+- PM2
+
+---
+
+## Architecture
+
+```
+
+Client
+
+↓
+
+Express Server
+
+↓
+
+API Routes
+
+↓
+
+Validation & Security Middleware
+
+↓
+
+Conversion Services
+
+↓
+
+File Storage
+
+↓
+
+Download API
+
+```
+
+The project follows a modular backend architecture where routing, middleware, conversion logic, utilities, and documentation are separated into independent modules for easier maintenance and scalability.
+
+---
+
+## Project Structure
+
+```
+Converty/
+│
+├── backend/
+│   ├── api/
+│   ├── services/
+│   ├── utils/
+│   └── db/
+│
+├── src/
+│   ├── routes/
+│   ├── middleware/
+│   ├── config/
+│   └── utils/
+│
+├── docs/
+├── examples/
+├── package.json
+└── README.md
+```
+
+---
+
+## Getting Started
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Ananya11488/converty.git
+```
+
+### Install Node Dependencies
+
+```bash
+npm install
+```
+
+### Install Python Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+### Build Project
+
+```bash
+npm run build
+```
+
+### Start Production Server
+
+```bash
+npm start
+```
+
+---
+
+## API Documentation
+
+After starting the application, Swagger documentation is available at:
+
+```
+https://localhost:3000/api-docs
+```
+
+---
+
+## Screenshots
+
+Add screenshots for:
+
+- Swagger Documentation
+- File Upload API
+- Conversion API
+- Download API
+
+---
+
+## Documentation
+
+Additional documentation is available in the **docs/** directory.
+
+- API Documentation
+- Integration Guide
+- Quick Start Guide
+- Availability Report
+- Software Requirement Specification
+- Software Architecture Document
+- Project Retrospective
+
+---
+
+## Future Improvements
+
+- Support additional conversion formats
+- User authentication and authorization
+- Batch file conversion
+- Cloud storage integration
+- Docker deployment
+- Conversion history dashboard
+- Rate limiting and caching
