@@ -1,0 +1,46 @@
+name: Python Backend CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  python-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Python syntax check
+        run: python -m py_compile $(git ls-files "*.py")
+
+      - name: Validate backend imports
+        run: |
+          python - << 'EOF'
+          import importlib
+          try:
+              importlib.import_module("backend.main")
+              print("✅ backend.main imports OK")
+          except Exception as e:
+              print("❌ Import error:", e)
+              exit(1)
+          EOF
+
+      - name: FastAPI startup dry run
+        run: |
+          uvicorn backend.main:app --host 127.0.0.1 --port 9000 &
+          sleep 5
+          curl -f http://127.0.0.1:9000/ || exit 1
+
+# No deploy job required yet

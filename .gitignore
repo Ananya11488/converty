@@ -1,0 +1,25 @@
+# Node dependencies
+node_modules/
+
+# Logs
+logs/
+logs/*.log
+logs/archive/*.log
+
+# Build and uploads
+uploads/
+dist/
+*.tsbuildinfo
+test.pdf
+sample.csv
+sample.md
+
+# Config and cache
+.env
+cert/
+*.zip
+*.tar.gz
+
+# IDE and system files
+.DS_Store
+.vscode/
